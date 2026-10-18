@@ -1,0 +1,20 @@
+{
+  "slug": "m2api-client",
+  "url": "https://www.m2toolkit.com/npm-packages/m2api-client",
+  "siteName": "M2Toolkit",
+  "ogImage": "https://www.m2toolkit.com/opengraph-image",
+  "accent": "#2a1eff",
+  "title": "API Client",
+  "tagline": "A Postman-style API testing workspace you can drop into any React app.",
+  "highlights": [
+    "Request builder, response inspector, auth, environments, collections, history and cURL",
+    "Use the whole workspace, compose individual panels, or call the hooks from your own UI",
+    "Typed request engine with middleware and custom transports that runs without React",
+    "Keyboard accessible, light and dark themes, zero runtime dependencies besides React"
+  ],
+  "build": {
+    "root": "demo",
+    "viteConfig": "demo/vite.config.ts",
+    "serverEntry": "demo/entry-server.tsx"
+  }
+}

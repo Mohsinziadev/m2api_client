@@ -1,0 +1,218 @@
+/* Root, resets scoped to the workspace, utilities. Nothing here leaks outside `.m2a`. */
+.m2a {
+  position: relative;
+  font-family: var(--m2a-font);
+  font-size: var(--m2a-font-size);
+  line-height: 1.45;
+  color: var(--m2a-text);
+  background: var(--m2a-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+}
+
+.m2a *,
+.m2a *::before,
+.m2a *::after {
+  box-sizing: border-box;
+}
+
+.m2a :where(p, h1, h2, h3, h4, ul, ol, dl, dd, figure, pre, fieldset) {
+  margin: 0;
+}
+
+.m2a :where(ul, ol) {
+  padding: 0;
+}
+
+.m2a :where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+.m2a :where(button) {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+.m2a :where(button:disabled, [aria-disabled='true']) {
+  cursor: not-allowed;
+}
+
+.m2a :where(code) {
+  font-family: var(--m2a-mono);
+  font-size: 0.92em;
+  padding: 0.05em 0.35em;
+  border-radius: var(--m2a-radius-sm);
+  background: var(--m2a-surface-3);
+}
+
+.m2a :where(a) {
+  color: var(--m2a-accent);
+}
+
+.m2a :focus-visible {
+  outline: 2px solid var(--m2a-focus);
+  outline-offset: 1px;
+}
+
+.m2a ::selection {
+  background: color-mix(in srgb, var(--m2a-accent) 28%, transparent);
+}
+
+.m2a-standalone {
+  background: var(--m2a-surface);
+  border: 1px solid var(--m2a-border);
+  border-radius: var(--m2a-radius-lg);
+  overflow: hidden;
+}
+
+.m2a-sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.m2a-mono {
+  font-family: var(--m2a-mono);
+  font-size: 12px;
+}
+.m2a-tabular {
+  font-variant-numeric: tabular-nums;
+}
+.m2a-muted {
+  color: var(--m2a-text-muted);
+}
+.m2a-danger {
+  color: var(--m2a-danger);
+}
+.m2a-grow {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.m2a-break {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+.m2a-pad {
+  padding: 12px;
+}
+.m2a-panel-pad {
+  padding: 12px 14px;
+}
+.m2a-panel-pad-x {
+  padding-inline: 14px;
+}
+.m2a-panel-pad-y {
+  padding-block: 8px;
+}
+.m2a-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.m2a-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.m2a-row-wrap {
+  flex-wrap: wrap;
+}
+.m2a-align-end {
+  margin-left: auto;
+}
+.m2a-hint {
+  color: var(--m2a-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.m2a-hint svg {
+  vertical-align: -1px;
+}
+.m2a-hint-row {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+.m2a-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--m2a-text);
+  letter-spacing: 0.01em;
+}
+.m2a-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--m2a-accent);
+  background: var(--m2a-accent-soft);
+  white-space: nowrap;
+}
+.m2a-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--m2a-accent);
+}
+
+/* Syntax colours */
+.m2a-tok-key,
+.m2a-tree-key {
+  color: var(--m2a-tok-key);
+}
+.m2a-tok-string {
+  color: var(--m2a-tok-string);
+}
+.m2a-tok-number {
+  color: var(--m2a-tok-number);
+}
+.m2a-tok-literal {
+  color: var(--m2a-tok-literal);
+  font-weight: 500;
+}
+.m2a-tok-punct {
+  color: var(--m2a-tok-punct);
+}
+.m2a-tok-variable,
+.m2a-var {
+  color: var(--m2a-accent);
+  background: var(--m2a-accent-soft);
+  border-radius: 3px;
+}
+.m2a-var-missing {
+  color: var(--m2a-danger);
+  background: color-mix(in srgb, var(--m2a-danger) 12%, transparent);
+}
+.m2a-mark {
+  background: var(--m2a-mark);
+  color: inherit;
+  border-radius: 2px;
+}
+.m2a-mark-active {
+  background: var(--m2a-mark-active);
+  color: #111;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m2a *,
+  .m2a *::before,
+  .m2a *::after {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+  }
+}

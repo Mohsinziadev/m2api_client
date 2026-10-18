@@ -1,0 +1,6 @@
+/* m2api-client stylesheet. Import once: `import 'm2api-client/styles.css'`. All rules are scoped to `.m2a`. */
+@import './tokens.css';
+@import './base.css';
+@import './controls.css';
+@import './layout.css';
+@import './panels.css';
